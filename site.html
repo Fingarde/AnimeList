@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Anime Streaming</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="container-fluid" style="display: flex; flex-direction: row; justify-content: space-around;  flex-wrap: wrap; padding: 80px;">
+                <div class="card" style="width: 18rem; box-sizing: border-box; margin: 20px 8px;" v-for="site in sites">
+                    <img v-bind:src="site.image" class="card-img-top" height="180" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ site.name }}</h5>
+                        <a v-bind:href="site.url" class="btn btn-primary">Aller sur le site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js""></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    sites: [
+                        {
+                            name: 'Vostfree',
+                            url: 'https://vostfree.com/',
+                            image: 'images/vostfree.com.png'
+                        },
+                        {
+                            name: 'Jetanimes',
+                            url: 'https://www.jetanimes.co/',
+                            image: 'images/jetanimes.co.png'
+                        },
+                        {
+                            name: 'Mavanimes',
+                            url: 'http://www.mavanimes.co',
+                            image: 'images/mavanimes.co.png'
+                        },
+                        {
+                            name: 'Voir Anime',
+                            url: 'https://voiranime.com',
+                            image: 'images/voiranime.com.png'
+                        },
+                        {
+                            name: 'Gum Gum Streaming',
+                            url: 'https://gum-gum-streaming.com',
+                            image: 'images/gum-gum-streaming.com.png'
+                        },
+                        {
+                            name: 'Anime Complet',
+                            url: 'https://animecomplet.fr/',
+                            image: 'images/animecomplet.fr.png'
+                        },
+                        {
+                            name : 'Neko-sama',
+                            url : 'https://neko-sama.fr/',
+                            image: 'images/neko-sama.fr.png'
+                        },
+                        {
+                            name : 'Anime-planet',
+                            url : 'https://www.anime-planet.com/',
+                            image: 'images/anime-planet.com.png'
+                        },
+                        {
+                            name : 'Toonanime',
+                            url : 'https://wvvw.toonanime.co/',
+                            image: 'images/toonanime.co.png'
+                        },
+                        {
+                            name : 'Ianimes',
+                            url : 'https://www.ianimes.org/',
+                            image: 'images/ianimes.org.png'
+                        },
+                        {
+                            name : 'Adkami',
+                            url : 'https://www.adkami.com/',
+                            image: 'images/adkami.com.png'
+                        },
+                        {
+                            name : 'Anime-Gate',
+                            url : 'https://www.anime-gate.net/',
+                            image: 'images/anime-gate.net.png'
+                        },
+                        {
+                            name : 'AnimeFrenzy',
+                            url : 'https://animefrenzy.org/',
+                            image: 'images/animefrenzy.org.png'
+                        },
+                        {
+                            name : 'DubbedAnime',
+                            url : 'https://www.dubbedanime.vip/',
+                            image: 'images/dubbeanime.vip.png'
+                        },
+                        {
+                            name : 'Manga-vf',
+                            url : 'http://www.manga-vf.fr/',
+                            image: 'images/manga-vf.fr.png'
+                        },
+                        {
+                            name : 'Anime-vf',
+                            url : 'http://www.anime-vf.fr/',
+                            image: 'images/anime-vf.fr.png'
+                        },
+                        {
+                            name : 'Anime-Ultime',
+                            url : 'http://www.anime-ultime.net/',
+                            image: 'images/anime-ultime.net.png'
+                        },
+                        {
+                            name : 'Anime-Ultime',
+                            url : 'https://v5.anime-ultime.net/',
+                            image: 'images/v5.anime-ultime.net.png'
+                        },
+                        {
+                            name : 'GogoAnime',
+                            url : 'https://gogoanime.so/',
+                            image: 'images/gogoanimes.so.png'
+                        },
+                        {
+                            name : 'Masterani',
+                            url : 'https://www.masterani.one/',
+                            image: 'images/masterani.one.png'
+                        },
+                        {
+                            name : 'Otaku-Attitude',
+                            url : 'https://www.otaku-attitude.net/',
+                            image: 'images/otaku-attitude.net.png'
+                        },
+                        {
+                            name : 'AnimeResistance',
+                            url : 'http://animeresistance.co/',
+                            image: 'images/animeresistance.co.png'
+                        },
+                        {
+                            name : 'AnimeFreak',
+                            url : 'https://www.animefreak.tv/',
+                            image: 'images/animefreak.tv.png'
+                        },
+                        {
+                            name : 'Kiss-Anime',
+                            url : 'https://www.kiss-anime.ws/',
+                            image: 'images/kiss-anime.ws.png'
+                        },
+                        {
+                            name : 'Fan-Dmanga',
+                            url : 'https://fan-dmanga.fr/',
+                            image: 'images/fan-dmanga.fr.png'
+                        },
+                        {
+                            name : 'Dbanimes',
+                            url : 'https://dbanimes.com/',
+                            image: 'images/dbanimes.com.png'
+                        },
+                        {
+                            name : 'VoirAnime1',
+                            url : 'https://ww1.voiranime1.com/',
+                            image: 'images/voiranime1.com.png'
+                        },
+                        {
+                            name : 'AnimeComplet',
+                            url : 'https://www.animecomplet.org/',
+                            image: 'images/animecomplet.org.png'
+                        }
+                    ].sort((a, b) => a.name.localeCompare(b.name))
+                }
+            })
+        </script>
+    </body>
+</html>
