@@ -11,6 +11,9 @@
         <div id="app">
             <div class="container-fluid" style="display: flex; flex-direction: row; justify-content: space-around;  flex-wrap: wrap; padding: 80px;">
                 <div class="card" style="width: 18rem; box-sizing: border-box; margin: 20px 8px;" v-for="site in sites">
+                    <template v-if="site.favorite">
+                        <img src="https://www.svgrepo.com/show/231119/favorite-star.svg" height="32" style="position: absolute; left: 10px; top: 10px;">
+                    </template>
                     <img v-bind:src="site.image" class="card-img-top" height="180" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ site.name }}</h5>
@@ -33,12 +36,14 @@
                         {
                             name: 'Vostfree',
                             url: 'https://vostfree.com/',
-                            image: 'images/vostfree.com.png'
+                            image: 'images/vostfree.com.png',
+                            favorite: true
                         },
                         {
                             name: 'Jetanimes',
                             url: 'https://www.jetanimes.co/',
-                            image: 'images/jetanimes.co.png'
+                            image: 'images/jetanimes.co.png',
+                            favorite: true
                         },
                         {
                             name: 'Mavanimes',
@@ -53,7 +58,7 @@
                         {
                             name: 'Gum Gum Streaming',
                             url: 'https://gum-gum-streaming.com',
-                            image: 'images/gum-gum-streaming.com.png'
+                            image: 'images/gum-gum-streaming.com.png',
                         },
                         {
                             name: 'Anime Complet',
@@ -168,9 +173,10 @@
                         {
                             name : 'AnimeComplet',
                             url : 'https://www.animecomplet.org/',
-                            image: 'images/animecomplet.org.png'
+                            image: 'images/animecomplet.org.png',
+                            favorite: true
                         }
-                    ].sort((a, b) => a.name.localeCompare(b.name))
+                    ].sort((a, b) => a.name.localeCompare(b.name)).sort((a, b) => (a.favorite === b.favorite)? 0 : a.favorite? -1 : 1)
                 }
             })
         </script>
